@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RepFANue</string>
+    <string name="facebook_app_id">110397806295295</string>
+    <string name="fb_login_protocol_scheme">fb110397806295295</string>
+</resources>
