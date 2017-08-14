@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import ekalaya.id.repfanue.data.db.DBFunc;
+import ekalaya.id.repfanue.data.sp.SPManager;
 
 /**
  * Created by Femmy on 8/13/2017.
@@ -21,4 +22,6 @@ public interface AppComponent {
     Context getContext();
 
     DBFunc getDbFunc();
+
+    SPManager getSPManager();
 }

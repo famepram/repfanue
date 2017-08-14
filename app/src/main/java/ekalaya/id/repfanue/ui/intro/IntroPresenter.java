@@ -41,7 +41,9 @@ public class IntroPresenter extends BasePresenter<IntroContract.View> implements
 
     @Override
     public void checkAccessToken() {
-        if(getSPAccessToken() != ""){
+        if(getSPAccessToken() == ""){
+            view.onAccessTokenInexist();
+        } else {
 
         }
     }
