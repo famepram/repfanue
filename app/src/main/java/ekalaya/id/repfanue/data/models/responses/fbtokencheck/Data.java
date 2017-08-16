@@ -9,7 +9,7 @@ public class Data {
 
     @SerializedName("app_id")
     @Expose
-    private Integer appId;
+    private Long appId;
     @SerializedName("application")
     @Expose
     private String application;
@@ -30,13 +30,13 @@ public class Data {
     private List<String> scopes = null;
     @SerializedName("user_id")
     @Expose
-    private Integer userId;
+    private Long userId;
 
-    public Integer getAppId() {
+    public Long getAppId() {
         return appId;
     }
 
-    public void setAppId(Integer appId) {
+    public void setAppId(Long appId) {
         this.appId = appId;
     }
 
@@ -88,11 +88,11 @@ public class Data {
         this.scopes = scopes;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

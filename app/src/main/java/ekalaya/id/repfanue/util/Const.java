@@ -33,5 +33,6 @@ public class Const {
     public static final String SP_APP_KEY_FB_USER_ID = "repfanue.spkey.fb_user_id";
 
     public static final String SP_APP_KEY_FB_ACCESS_TOKEN = "repfanue.spkey.fb_access_token";
+
 }
 

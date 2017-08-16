@@ -27,6 +27,6 @@ public class FBAuthPresenter extends BasePresenter<FBAuthContract.View> implemen
     public void saveToken(String UserID, String Token) {
         spManager.put(Const.SP_APP_KEY_FB_USER_ID, UserID);
         spManager.put(Const.SP_APP_KEY_FB_ACCESS_TOKEN, Token);
-        view.onTokenSaved();
+        //view.onTokenSaved();
     }
 }

@@ -17,7 +17,10 @@ import javax.inject.Inject;
 
 import ekalaya.id.repfanue.R;
 import ekalaya.id.repfanue.application.App;
+import ekalaya.id.repfanue.ui.appselect.AppSelectActivity;
 import ekalaya.id.repfanue.util.Const;
+
+import static ekalaya.id.repfanue.util.Const.APP_TAG;
 
 public class FBAuthActivity extends AppCompatActivity implements FBAuthContract.View, FacebookCallback<LoginResult>{
 
@@ -54,27 +57,39 @@ public class FBAuthActivity extends AppCompatActivity implements FBAuthContract.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 1 && data != null){
+//            callbackManager.onActivityResult(requestCode, resultCode, data);
+//        }
+
     }
 
     @Override
     public void onTokenSaved() {
-        //Intent i = new Intent(this,)
+        Log.d(APP_TAG, "onTokenSaved");
+//        Intent i = new Intent(this, AppSelectActivity.class);
+//        startActivity(i);
+//        finish();
     }
 
     @Override
     public void onSuccess(LoginResult loginResult) {
+        //loginResult.
         String FBUserID             = loginResult.getAccessToken().getUserId();
         String FBAccessToken        = loginResult.getAccessToken().getToken();
         presenter.saveToken(FBUserID,FBAccessToken);
+
+        Intent i = new Intent(this, AppSelectActivity.class);
+        startActivity(i);
+        finish();
     }
 
     @Override
     public void onCancel() {
-        Log.d(Const.APP_TAG, "login Cancelled");
+        Log.d(APP_TAG, "login Cancelled");
     }
 
     @Override
     public void onError(FacebookException error) {
-        Log.d(Const.APP_TAG, error.toString());
+        Log.d(APP_TAG, error.toString());
     }
 }

@@ -17,16 +17,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FBGraphApiService {
 
-    public static Retrofit getService(String path){
+    public static Retrofit getService(){
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(interceptor);
         OkHttpClient client = httpClient.build();
 
-        String BASE_URL = Const.FB_BASE_URL_GRAPH_API + path;
+        //String BASE_URL = Const.FB_BASE_URL_GRAPH_API + path+"/";
         return new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(Const.FB_BASE_URL_GRAPH_API)
                 .addConverterFactory(GsonConverterFactory.create())
                 //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(client)

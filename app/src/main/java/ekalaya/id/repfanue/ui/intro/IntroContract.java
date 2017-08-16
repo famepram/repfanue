@@ -14,6 +14,8 @@ public class IntroContract {
         void onAccessTokenExists();
 
         void onAccessTokenInexist();
+
+        void onTokenValid();
     }
 
     interface Presenter {
