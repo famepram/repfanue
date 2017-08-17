@@ -16,6 +16,8 @@ public class DBCons {
 
     public static final String DATATYPE_BOOLEAN = "INTEGER";
 
+    public static final String DATATYPE_DOUBLE = "REAL";
+
     public static final String TABLE_APPS = "fb_apps";
 
     public static final String TABLE_COLUMN_APPS_ID = "apps_id";
@@ -26,6 +28,8 @@ public class DBCons {
 
     public static final String TABLE_COLUMN_APPS_CATEGORY = "category";
 
+    public static final String TABLE_COLUMN_APPS_REVENUE= "revenue";
+
     public static final String TABLE_COLUMN_ACTIVE = "active";
 
     public static String COMMAND_CREATE_TABLE_APPS =
@@ -34,6 +38,7 @@ public class DBCons {
                     TABLE_COLUMN_FB_APPS_ID+" "+ DATATYPE_TEXT  + ", " +
                     TABLE_COLUMN_APPS_NAME+" "+ DATATYPE_TEXT + ", " +
                     TABLE_COLUMN_APPS_CATEGORY+" "+ DATATYPE_TEXT + ", " +
+                    TABLE_COLUMN_APPS_REVENUE+" "+ DATATYPE_DOUBLE + ", " +
                     TABLE_COLUMN_ACTIVE +" "+DATATYPE_BOOLEAN +
                     " )";
 }

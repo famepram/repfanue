@@ -14,6 +14,8 @@ public class FBApps {
 
     private String category;
 
+    private double revenue;
+
     private boolean active;
 
     public int getApps_id() {
@@ -54,5 +56,13 @@ public class FBApps {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public double getRevenue() {
+        return revenue;
+    }
+
+    public void setRevenue(double revenue) {
+        this.revenue = revenue;
     }
 }

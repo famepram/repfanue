@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:icon="@android:drawable/ic_menu_more"
-        android:showAsAction="ifRoom">
-        <menu>
-            <item
-                android:id="@+id/refresh_applist"
-                android:title="Refresh" />
-            <item
-                android:id="@+id/add_apps"
-                android:title="Add new App" />
-        </menu>
-    </item>
+        android:id="@+id/refresh_applist"
+        android:icon="@android:drawable/ic_popup_sync"
+        android:title="Refresh" />
+    <item
+        android:id="@+id/add_apps"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Add new App" />
 </menu>

@@ -1,5 +1,7 @@
 package ekalaya.id.repfanue.ui.appselect;
 
+import java.util.List;
+
 import ekalaya.id.repfanue.data.models.entities.FBApps;
 
 /**
@@ -10,21 +12,26 @@ public class AppSelectContract {
 
     interface View {
 
-        void showDialogFrom();
-
-        void showDialogAppMenu();
 
         void onSuccessAppSave();
 
         void onFailedAppSave();
 
+        void onItemDeleted();
+
         void onUpdateAppsItem();
+
+        void onListUpdated(List<FBApps> mList);
+
+        void onListEmpty();
     }
 
     interface Presenter {
-        void setupList();
+        void refreshList();
 
-        void saveApp(FBApps e);
+        void saveApp(String appsid);
+
+        void deleteItem(int id);
 
 
     }
