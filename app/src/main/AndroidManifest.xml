@@ -41,7 +41,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.fbauth.FBAuthActivity" />
-        <activity android:name=".ui.appselect.AppSelectActivity"></activity>
+        <activity android:name=".ui.appselect.AppSelectActivity" />
+        <activity android:name=".ui.overview.OverviewActivity"></activity>
     </application>
 
 </manifest>

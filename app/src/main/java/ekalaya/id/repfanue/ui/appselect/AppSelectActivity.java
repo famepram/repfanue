@@ -118,8 +118,9 @@ public class AppSelectActivity extends AppCompatActivity implements AppSelectCon
     }
 
     @Override
-    public void onFailedAppSave() {
-        Toast.makeText(getApplicationContext(),"Apps not saved, try again later",Toast.LENGTH_SHORT).show();
+    public void onFailedAppSave(String s) {
+        mDialog.dismiss();
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
     }
 
     @Override

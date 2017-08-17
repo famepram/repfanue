@@ -52,7 +52,7 @@ public class AppSelectPresenter extends BasePresenter<AppSelectContract.View> im
             public void onResponse(Call<Apps> call, Response<Apps> response) {
                 Apps apps = response.body();
                 if(apps == null){
-                    view.onFailedAppSave();
+                    view.onFailedAppSave("Apps not found, please re-check your apps id");
                 } else {
                     FBApps mApp = new FBApps();
                     mApp.setApps_name(response.body().getName());
@@ -60,23 +60,27 @@ public class AppSelectPresenter extends BasePresenter<AppSelectContract.View> im
                     mApp.setCategory(response.body().getCategory());
                     mApp.setRevenue(0);
                     mApp.setActive(true);
-                    dbFunc.SaveApp(mApp, new DBInterface.SaveAppListener() {
-                        @Override
-                        public void onSaveSuccess() {
-                            view.onSuccessAppSave();
-                        }
+                    if(!dbFunc.FBAppsExists(mApp.getFbapps_id())){
+                        dbFunc.SaveApp(mApp, new DBInterface.SaveAppListener() {
+                            @Override
+                            public void onSaveSuccess() {
+                                view.onSuccessAppSave();
+                            }
 
-                        @Override
-                        public void onSaveFailed() {
-                            view.onFailedAppSave();
-                        }
-                    });
+                            @Override
+                            public void onSaveFailed() {
+                                view.onFailedAppSave("Apps not saved, try again later");
+                            }
+                        });
+                    } else {
+                        view.onFailedAppSave("Apps already exist");
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<Apps> call, Throwable t) {
-                view.onFailedAppSave();
+                view.onFailedAppSave("Apps not found, please re-check your apps id");
             }
         });
     }

@@ -15,7 +15,7 @@ public class AppSelectContract {
 
         void onSuccessAppSave();
 
-        void onFailedAppSave();
+        void onFailedAppSave(String s);
 
         void onItemDeleted();
 

@@ -99,4 +99,16 @@ public class DBFunc {
         db.delete(DBCons.TABLE_APPS, whereClause, whereArgs);
         cb.onDelete();
     }
+
+    public boolean FBAppsExists(String fbapp_id){
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor mCount= db.rawQuery("select count(*) from "+DBCons.TABLE_APPS+" where "+DBCons.TABLE_COLUMN_FB_APPS_ID+"='" + fbapp_id + "'", null);
+        mCount.moveToFirst();
+        int count = mCount.getInt(0);
+        mCount.close();
+        if(count > 0){
+            return true;
+        }
+        return false;
+    }
 }
