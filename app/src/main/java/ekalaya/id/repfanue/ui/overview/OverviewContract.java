@@ -5,4 +5,12 @@ package ekalaya.id.repfanue.ui.overview;
  */
 
 public class OverviewContract {
+
+    public interface View {
+
+    }
+
+    public interface Presenter {
+
+    }
 }
