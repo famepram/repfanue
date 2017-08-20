@@ -28,4 +28,10 @@ public class DBInterface {
     public interface deleteAppsLiestener {
         void onDelete();
     }
+
+    public interface getSingleFbapp{
+        void onSuccess(FBApps mApps);
+
+        void onFailed();
+    }
 }

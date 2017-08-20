@@ -31,6 +31,10 @@ public class OverviewActivity extends AppCompatActivity implements OverviewContr
         actvComponent.inject(this);
     }
 
+    public OverviewComponent getComponent(){
+        return actvComponent;
+    }
+
     private void initUI(){
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));

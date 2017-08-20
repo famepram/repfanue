@@ -4,4 +4,18 @@
     <string name="fb_login_protocol_scheme">fb110397806295295</string>
     <string name="dialogform_title">Add New Apps</string>
     <string name="dialogform_msg">Insert Your FB Apps ID</string>
+
+    <!-- Fragment Main-->
+    <string name="today_date_rev_label">Today Est Revenue </string>
+
+    <string name="sofar_imp_label">Impressions </string>
+    <string name="sofar_click_label">Clicks </string>
+    <string name="sofar_rev_label">Revenue </string>
+
+    <string name="today_request_label">Request </string>
+    <string name="today_filled_request_label">Filled Request </string>
+    <string name="today_impression_label">Impressions </string>
+    <string name="today_click_label">CTR </string>
+    <string name="today_ctr_label">CTR </string>
+    <string name="today_ecpm_label">eCPM </string>
 </resources>

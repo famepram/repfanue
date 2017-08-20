@@ -12,7 +12,7 @@ import ekalaya.id.repfanue.R;
  * Created by WebDev on 18/08/2017.
  */
 
-public class FragmentMain2 extends Fragment{
+public class FragmentRevenue extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
