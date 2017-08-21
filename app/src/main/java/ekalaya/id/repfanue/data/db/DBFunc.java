@@ -111,4 +111,40 @@ public class DBFunc {
         }
         return false;
     }
+
+    public FBApps getFBApp(int id){
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        String[] projection = {
+                DBCons.TABLE_COLUMN_APPS_ID,
+                DBCons.TABLE_COLUMN_FB_APPS_ID,
+                DBCons.TABLE_COLUMN_APPS_NAME,
+                DBCons.TABLE_COLUMN_APPS_CATEGORY,
+                DBCons.TABLE_COLUMN_APPS_REVENUE,
+                DBCons.TABLE_COLUMN_ACTIVE
+        };
+        String args = DBCons.TABLE_COLUMN_APPS_ID + "=?";
+        String[] paramVal = new String[] { String.valueOf(id)};
+        Cursor c = db.query(DBCons.TABLE_APPS, projection, args, paramVal, null, null, null);
+        if(c != null){
+            c.moveToFirst();
+            int apps_id             = c.getInt(c.getColumnIndexOrThrow(DBCons.TABLE_COLUMN_APPS_ID));
+            String fb_apps_id       = c.getString(c.getColumnIndexOrThrow(DBCons.TABLE_COLUMN_FB_APPS_ID));
+            String apps_name        = c.getString(c.getColumnIndexOrThrow(DBCons.TABLE_COLUMN_APPS_NAME));
+            String category         = c.getString(c.getColumnIndexOrThrow(DBCons.TABLE_COLUMN_APPS_NAME));
+            Double revenue          = c.getDouble(c.getColumnIndexOrThrow(DBCons.TABLE_COLUMN_APPS_REVENUE));
+            int active              = c.getInt(c.getColumnIndexOrThrow(DBCons.TABLE_COLUMN_ACTIVE));
+            FBApps mApps            = new FBApps();
+            mApps.setApps_id(apps_id);
+            mApps.setFbapps_id(fb_apps_id);
+            mApps.setApps_name(apps_name);
+            mApps.setCategory(category);
+            mApps.setRevenue(revenue);
+            mApps.setActive(active == 0 ? false : true);
+            c.close();
+            return mApps;
+         } else {
+            return null;
+        }
+    }
 }

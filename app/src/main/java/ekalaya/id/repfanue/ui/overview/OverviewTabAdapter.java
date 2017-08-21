@@ -5,8 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import ekalaya.id.repfanue.ui.overview.fragments.FragmentMain;
-import ekalaya.id.repfanue.ui.overview.fragments.FragmentMain2;
-import ekalaya.id.repfanue.ui.overview.fragments.FragmentMain3;
+import ekalaya.id.repfanue.ui.overview.fragments.FragmentRevenue;
+import ekalaya.id.repfanue.ui.overview.fragments.FragmentRequest;
 
 /**
  * Created by WebDev on 18/08/2017.
@@ -28,10 +28,10 @@ public class OverviewTabAdapter extends FragmentStatePagerAdapter {
                 FragmentMain tab1 = new FragmentMain();
                 return tab1;
             case 1:
-                FragmentMain2 tab2 = new FragmentMain2();
+                FragmentRevenue tab2 = new FragmentRevenue();
                 return tab2;
             case 2:
-                FragmentMain3 tab3 = new FragmentMain3();
+                FragmentRequest tab3 = new FragmentRequest();
                 return tab3;
             default:
                 return null;

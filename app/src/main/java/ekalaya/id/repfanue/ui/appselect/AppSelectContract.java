@@ -33,6 +33,8 @@ public class AppSelectContract {
 
         void deleteItem(int id);
 
+        void selectApp(int id);
+
 
     }
 }

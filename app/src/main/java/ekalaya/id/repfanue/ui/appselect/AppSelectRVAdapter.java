@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ekalaya.id.repfanue.R;
@@ -43,8 +44,7 @@ public class AppSelectRVAdapter extends RecyclerView.Adapter<AppSelectRVAdapter.
     }
 
     public AppSelectRVAdapter(List<FBApps> FBAppsList){
-
-        ListFBApps = FBAppsList;
+        ListFBApps = FBAppsList == null ? new ArrayList<FBApps>() : FBAppsList;
     }
 
     public void setData(List<FBApps> ListFBApps){
@@ -88,8 +88,7 @@ public class AppSelectRVAdapter extends RecyclerView.Adapter<AppSelectRVAdapter.
 
     @Override
     public int getItemCount() {
-
-        return ListFBApps.size();
+        return  ListFBApps.size();
     }
 
 

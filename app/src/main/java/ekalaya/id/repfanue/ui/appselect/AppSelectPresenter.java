@@ -9,6 +9,7 @@ import ekalaya.id.repfanue.data.db.DBInterface;
 import ekalaya.id.repfanue.data.models.entities.FBApps;
 import ekalaya.id.repfanue.data.models.responses.fbcheckapp.Apps;
 import ekalaya.id.repfanue.data.models.responses.fbcheckapp.Roles;
+import ekalaya.id.repfanue.data.sp.SPManager;
 import ekalaya.id.repfanue.network.FBGraphApiService;
 import ekalaya.id.repfanue.network.FBNetInterface;
 import ekalaya.id.repfanue.ui.base.BasePresenter;
@@ -22,6 +23,9 @@ import retrofit2.Response;
  */
 
 public class AppSelectPresenter extends BasePresenter<AppSelectContract.View> implements AppSelectContract.Presenter{
+
+    @Inject
+    SPManager spManager;
 
     @Inject
     public AppSelectPresenter(DBFunc dbFunc, AppSelectContract.View view) {
@@ -93,5 +97,10 @@ public class AppSelectPresenter extends BasePresenter<AppSelectContract.View> im
                 view.onItemDeleted();
             }
         });
+    }
+
+    @Override
+    public void selectApp(int id) {
+        spManager.put(Const.SP_APP_KEY_APP_ID_SELECTED,id);
     }
 }

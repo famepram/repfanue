@@ -2,6 +2,7 @@ package ekalaya.id.repfanue.ui.appselect;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -28,6 +30,7 @@ import javax.inject.Inject;
 import ekalaya.id.repfanue.R;
 import ekalaya.id.repfanue.application.App;
 import ekalaya.id.repfanue.data.models.entities.FBApps;
+import ekalaya.id.repfanue.ui.overview.OverviewActivity;
 import ekalaya.id.repfanue.util.Const;
 
 import static ekalaya.id.repfanue.util.Const.APP_TAG;
@@ -188,6 +191,8 @@ public class AppSelectActivity extends AppCompatActivity implements AppSelectCon
 
     @Override
     public void onClick(int id) {
-        Toast.makeText(getApplicationContext(),"ID : "+id,Toast.LENGTH_SHORT).show();
+        presenter.selectApp(id);
+        Intent i = new Intent(AppSelectActivity.this, OverviewActivity.class);
+        startActivity(i);
     }
 }

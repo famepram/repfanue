@@ -1,15 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="6">
+    <!-- Highlight Revenue today Start -->
+    <LinearLayout
+        android:id="@+id/wrapper_banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1.5">
+        <TextView
+            android:id="@+id/tv_today_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_today_revenue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_today_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/today_date_rev_label"/>
+    </LinearLayout>
+    <!-- Highlight Revenue today End -->
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Tab 1"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+    <!-- Highlight Summary Sofar Start -->
+    <LinearLayout
+        android:id="@+id/wrapper_sofar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1.5"
+        android:weightSum="3">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_sofar_imp_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sofar_imp_label"/>
+            <TextView
+                android:id="@+id/tv_sofar_imp_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_sofar_click_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sofar_click_label"/>
+            <TextView
+                android:id="@+id/tv_sofar_click_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_sofar_rev_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sofar_rev_label"/>
+            <TextView
+                android:id="@+id/tv_sofar_rev_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- Highlight Summary Sofar End -->
+
+    <!-- Highlight Summary Detail Sofar Start -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <!-- Request Start -->
+        <TextView
+            android:id="@+id/tv_today_request_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/today_request_label"/>
+        <TextView
+            android:id="@+id/tv_today_request_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.v4.widget.Space
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:background="?android:attr/listDivider"/>
+        <!-- Request End -->
+
+        <!-- Filled Request Start -->
+        <TextView
+            android:id="@+id/tv_today_filled_request_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/today_filled_request_label"/>
+        <TextView
+            android:id="@+id/tv_today_filled_request_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.v4.widget.Space
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:background="?android:attr/listDivider"/>
+        <!-- Filled Request End -->
+
+        <!-- Impression Start -->
+        <TextView
+            android:id="@+id/tv_today_impression_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/today_impression_label"/>
+        <TextView
+            android:id="@+id/tv_today_impression_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.v4.widget.Space
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:background="?android:attr/listDivider"/>
+        <!-- Impression End -->
+
+        <!-- Click Start -->
+        <TextView
+            android:id="@+id/tv_today_click_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/today_click_label"/>
+        <TextView
+            android:id="@+id/tv_today_click_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.v4.widget.Space
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:background="?android:attr/listDivider"/>
+        <!-- Click End -->
+
+        <!-- CTR Start -->
+        <TextView
+            android:id="@+id/tv_today_ctr_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/today_ctr_label" />
+        <TextView
+            android:id="@+id/tv_today_ctr_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.v4.widget.Space
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:background="?android:attr/listDivider"/>
+        <!-- CTR End -->
+
+
+        <!-- eCPM Start -->
+        <TextView
+            android:id="@+id/tv_today_ecpm_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/today_ecpm_label"/>
+        <TextView
+            android:id="@+id/tv_today_ecpm_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!-- eCPM Ends -->
+
+    </LinearLayout>
+    <!-- Highlight Summary Detail Sofar End -->
+</LinearLayout>

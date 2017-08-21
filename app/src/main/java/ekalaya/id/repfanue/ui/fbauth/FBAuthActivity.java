@@ -15,6 +15,8 @@ import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
+import java.util.Arrays;
+
 import javax.inject.Inject;
 
 import ekalaya.id.repfanue.R;
@@ -56,6 +58,7 @@ public class FBAuthActivity extends AppCompatActivity implements FBAuthContract.
     private void initUI(){
         info = (TextView)findViewById(R.id.info);
         loginButton = (LoginButton)findViewById(R.id.login_button);
+        loginButton.setReadPermissions(Arrays.asList("read_audience_network_insights"));
 
         callbackManager = CallbackManager.Factory.create();
         loginButton.registerCallback(callbackManager, this);
