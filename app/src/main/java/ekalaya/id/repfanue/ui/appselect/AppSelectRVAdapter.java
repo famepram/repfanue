@@ -43,6 +43,7 @@ public class AppSelectRVAdapter extends RecyclerView.Adapter<AppSelectRVAdapter.
     }
 
     public AppSelectRVAdapter(List<FBApps> FBAppsList){
+
         ListFBApps = FBAppsList;
     }
 
@@ -87,6 +88,7 @@ public class AppSelectRVAdapter extends RecyclerView.Adapter<AppSelectRVAdapter.
 
     @Override
     public int getItemCount() {
+
         return ListFBApps.size();
     }
 

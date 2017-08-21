@@ -33,15 +33,21 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.intro.IntroActivity">
+        <activity
+            android:name=".ui.intro.IntroActivity"
+            android:theme="@style/AppTheme.NoActionBarFullscreen">
+
+        </activity>
+        <activity android:name=".ui.fbauth.FBAuthActivity"
+            android:theme="@style/AppTheme.NoActionBarFullscreen">
+
+        </activity>
+        <activity android:name=".ui.appselect.AppSelectActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.fbauth.FBAuthActivity" />
-        <activity android:name=".ui.appselect.AppSelectActivity" />
         <activity android:name=".ui.overview.OverviewActivity"></activity>
     </application>
 

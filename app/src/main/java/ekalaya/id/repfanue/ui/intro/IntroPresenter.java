@@ -39,12 +39,13 @@ public class IntroPresenter extends BasePresenter<IntroContract.View> implements
     @Override
     public void countDownToInit() {
         view.showSplashScreen();
-        new CountDownTimer(5000, 1000) {
+        new CountDownTimer(3000, 1000) {
 
             public void onTick(long m) {}
 
             public void onFinish() {
-                view.showInitScreen();
+
+                checkAccessToken();
             }
 
         }.start();

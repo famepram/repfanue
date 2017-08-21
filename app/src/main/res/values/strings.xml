@@ -4,4 +4,7 @@
     <string name="fb_login_protocol_scheme">fb110397806295295</string>
     <string name="dialogform_title">Add New Apps</string>
     <string name="dialogform_msg">Insert Your FB Apps ID</string>
+
+    <string name="intro_appname">REFANUE</string>
+    <string name="intro_appdesc">FAN Revenue Report</string>
 </resources>

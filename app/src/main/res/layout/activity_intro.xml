@@ -4,7 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient_bluegreen"
+    android:background="@drawable/bg"
     tools:context="ekalaya.id.repfanue.ui.intro.IntroActivity">
+    <TextView
+        android:id="@+id/tv_intro_appname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="-48dp"
+        android:text="@string/intro_appname"
+        style="@style/TextAppearance.AppCompat.Headline.White"/>
+    <TextView
+        android:id="@+id/tv_intro_appdesc"
+        android:layout_below="@+id/tv_intro_appname"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        style="@style/TextAppearance.AppCompat.Caption.White"
+        android:layout_height="wrap_content"
+        android:text="@string/intro_appdesc" />
 
 </RelativeLayout>

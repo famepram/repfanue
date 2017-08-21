@@ -8,4 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name= "AppTheme.NoActionBarFullscreen" parent = "AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <style name="TextAppearance.AppCompat.Headline.White" parent="TextAppearance.AppCompat.Headline">
+        <!--<item name="android:textSize">80sp</item>-->
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Caption.White" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
 </resources>

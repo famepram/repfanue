@@ -4,20 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context="ekalaya.id.repfanue.ui.fbauth.FBAuthActivity">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/info"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:textSize="18sp"
-        />
-
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
+        android:id="@+id/tv_intro_appname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_marginTop="-48dp"
+        android:text="@string/intro_appname"
+        style="@style/TextAppearance.AppCompat.Headline.White"/>
+    <TextView
+        android:id="@+id/tv_intro_appdesc"
+        android:layout_below="@+id/tv_intro_appname"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        style="@style/TextAppearance.AppCompat.Caption.White"
+        android:layout_height="wrap_content"
+        android:text="@string/intro_appdesc" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_marginTop="64dp"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="124dp"
         />
 </RelativeLayout>
