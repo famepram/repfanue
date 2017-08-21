@@ -3,12 +3,17 @@ package ekalaya.id.repfanue.ui.appselect;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,7 +40,11 @@ import ekalaya.id.repfanue.util.Const;
 
 import static ekalaya.id.repfanue.util.Const.APP_TAG;
 
-public class AppSelectActivity extends AppCompatActivity implements AppSelectContract.View,AppSelectRVAdapter.itemEventListener {
+public class AppSelectActivity extends AppCompatActivity
+        implements
+        AppSelectContract.View,
+        AppSelectRVAdapter.itemEventListener,
+        NavigationView.OnNavigationItemSelectedListener {
 
     AppSelectComponent appSelectComponent;
 
@@ -59,6 +68,8 @@ public class AppSelectActivity extends AppCompatActivity implements AppSelectCon
         appSelectComponent.inject(this);
         initUI();
         presenter.refreshList();
+
+        presenter.restoreDataTest();
     }
 
     private void initComponent(){
@@ -69,6 +80,19 @@ public class AppSelectActivity extends AppCompatActivity implements AppSelectCon
     }
 
     private void initUI(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
         mAdapter = new AppSelectRVAdapter(null);
         mAdapter.setItemListener(this);
         RVFBApps = (RecyclerView) findViewById(R.id.recycler_view_fb_apps);
@@ -194,5 +218,10 @@ public class AppSelectActivity extends AppCompatActivity implements AppSelectCon
         presenter.selectApp(id);
         Intent i = new Intent(AppSelectActivity.this, OverviewActivity.class);
         startActivity(i);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }

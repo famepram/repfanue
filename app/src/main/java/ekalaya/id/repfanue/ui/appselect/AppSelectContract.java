@@ -35,6 +35,8 @@ public class AppSelectContract {
 
         void selectApp(int id);
 
+        void restoreDataTest();
+
 
     }
 }

@@ -5,10 +5,8 @@
     <string name="dialogform_title">Add New Apps</string>
     <string name="dialogform_msg">Insert Your FB Apps ID</string>
 
-<<<<<<< HEAD
     <string name="intro_appname">REFANUE</string>
     <string name="intro_appdesc">FAN Revenue Report</string>
-=======
     <!-- Fragment Main-->
     <string name="today_date_rev_label">Today Est Revenue </string>
 
@@ -22,5 +20,10 @@
     <string name="today_click_label">CTR </string>
     <string name="today_ctr_label">CTR </string>
     <string name="today_ecpm_label">eCPM </string>
->>>>>>> 6307707891822a8006ac39ceb33d97153972960f
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

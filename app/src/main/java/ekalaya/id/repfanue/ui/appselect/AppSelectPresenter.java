@@ -1,5 +1,6 @@
 package ekalaya.id.repfanue.ui.appselect;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -102,5 +103,35 @@ public class AppSelectPresenter extends BasePresenter<AppSelectContract.View> im
     @Override
     public void selectApp(int id) {
         spManager.put(Const.SP_APP_KEY_APP_ID_SELECTED,id);
+    }
+
+    @Override
+    public void restoreDataTest() {
+        List<FBApps> ListDataTest = new ArrayList<>();
+        FBApps mApp = new FBApps();
+        mApp.setApps_id(1);
+        mApp.setApps_name("Find The Ass Hole");
+        mApp.setFbapps_id("112336633211332");
+        mApp.setActive(false);
+        mApp.setCategory("Game");
+        ListDataTest.add(mApp);
+
+        FBApps mApp2 = new FBApps();
+        mApp2.setApps_id(2);
+        mApp2.setApps_name("Catch The Goodluck");
+        mApp2.setFbapps_id("112336633215555");
+        mApp2.setActive(false);
+        mApp2.setCategory("Game");
+        ListDataTest.add(mApp2);
+
+        FBApps mApp3 = new FBApps();
+        mApp3.setApps_id(3);
+        mApp3.setApps_name("Forget That Jerk");
+        mApp3.setFbapps_id("112336633215566");
+        mApp3.setActive(false);
+        mApp3.setCategory("Game");
+        ListDataTest.add(mApp3);
+
+        view.onListUpdated(ListDataTest);
     }
 }
